@@ -16,7 +16,7 @@ export const API_URL: string = "https://nomad-movies.nomadcoders.workers.dev/mov
 // 이 경우, 최초의 패치 시에는 로딩이 있지만, 두 번째 부터는 메모리에 캐시된 데이터를 보여준다.
 // 문제점, 로딩시 유저가 페이지에서 아무것도 보지 못한다.
 async function getMovies() {
-  await new Promise((resolve) => setTimeout(resolve, 500))
+  await new Promise((resolve)=>setTimeout(resolve, 2000))
   const response = await fetch(API_URL);
   const json = response.json();
   return json;
@@ -26,7 +26,9 @@ export default async function HomePage() {
   const movies = await getMovies();
   return (
     <div>
-      { movies.map(movie => <li key={movie.id}><Link href={`/movies/${movie.id}`}>{movie.title}</Link></li>) }
+      { 
+        movies.map(movie => <li key={movie.id}><Link href={`/movies/${movie.id}`}>{movie.title}</Link></li>) 
+      }
     </div>
   )
 }
