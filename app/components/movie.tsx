@@ -17,7 +17,7 @@ export default function Movie({id, title, poster_path}: IMovieProps) {
   }
   return ( 
       <div className={styles.movie}>
-        <img src={poster_path} alt={title} onClick={handleClick} />
+        <img src={poster_path} alt={title} onClick={handleClick} />np 
         <Link href={`/movies/${id}`}> {title} </Link>
       </div>
   )

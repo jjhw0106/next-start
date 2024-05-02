@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Movie from "../components/movie";
 import styles from "../../styles/home.module.css";
 
-const metadata = {
+export const metadata = {
   title: "Home"
 }
 
