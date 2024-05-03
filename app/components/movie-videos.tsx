@@ -1,5 +1,5 @@
-import { API_URL } from "../(home)/page";
 import styles from "../../styles/movie-videos.module.css";
+import { API_URL } from "../constants";
 
 async function getVideo(id: string) {
   console.log("getVideo!!!!!!!!!!!!!!!!!");

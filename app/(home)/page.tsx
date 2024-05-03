@@ -1,18 +1,12 @@
-import { Metadata } from "next";
-import { Head } from "next/document";
-import Link from "next/link";
-import { resolve } from "path";
-import { title } from "process";
-import { useEffect, useState } from "react";
 import Movie from "../components/movie";
 import styles from "../../styles/home.module.css";
+import { API_URL } from "../constants";
 
 export const metadata = {
   title: "Home",
   default: "Loading..."
 }
 
-export const API_URL: string = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 // 백엔드에서 데이터 패칭을 마친 후, 클라이언트에서 표시하는 방식
 // 로딩이 클라이언트에서 백엔드로 넘어감.
