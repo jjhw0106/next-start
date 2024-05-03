@@ -7,8 +7,9 @@ import { useEffect, useState } from "react";
 import Movie from "../components/movie";
 import styles from "../../styles/home.module.css";
 
-const metadata = {
-  title: "Home"
+export const metadata = {
+  title: "Home",
+  default: "Loading..."
 }
 
 export const API_URL: string = "https://nomad-movies.nomadcoders.workers.dev/movies";
