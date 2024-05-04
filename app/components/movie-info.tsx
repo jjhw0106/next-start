@@ -2,7 +2,7 @@ import { API_URL } from "../constants";
 
 async function getMovieInfo(id: string) {
   console.log("getMovieInfo!!!!!!!!!!!!!!!");
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 13000));
   const response = await fetch(`${API_URL}/${id}`)
   return response.json();
 }
