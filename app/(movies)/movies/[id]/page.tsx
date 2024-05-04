@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import MovieInfo, { getMovieInfo } from "../../../components/movie-info";
+import MovieInfo, { getMovieInfo, getMovieMetadata } from "../../../components/movie-info";
 import MovieVideos from "../../../components/movie-videos";
 import Loading from "./loading";
 
@@ -11,20 +11,15 @@ interface IParams {
 }
 
 // 함수명은 반드시 generateMetadata여야 한다.
-export async function generateMetadata({params: {id}}:IParams) {
+export async function generateMetadata({params: {id}}: IParams) {
   // 데이터 패칭을 여기서 한번, movieInfo에서 한번 해서 두 번 한다고 생각할 수 있지만,
   // 한 번 패칭된 데이터는 캐싱되기 때문에 비효율적이라 생각하지 않아도 된다.
-  const movie = await getMovieInfo(id); 
-
-
+  // const movie = await getMovieInfo(id);  => metaData를 생성할 떄 getMovieInfo를 
+  const movieTitle = await getMovieMetadata(id);
   return {
-    title: movie.title,
+    title: movieTitle,
   };
 }
-// export const metadata = {
-//   title: "Home",
-//   default: "Loading..."
-// }
 
 export default async function MovieDetail({params: {id}}: {params: {id:string}}) {
   return (<div>
