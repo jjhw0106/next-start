@@ -1,4 +1,4 @@
-import { API_URL } from "../(home)/page";
+import { API_URL } from "../constants";
 
 async function getMovieInfo(id: string) {
   console.log("getMovieInfo!!!!!!!!!!!!!!!");
