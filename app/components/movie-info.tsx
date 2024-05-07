@@ -10,7 +10,7 @@ export async function getMovieMetadata(id: String) {
 
 export async function getMovieInfo(id: string) {
   console.log("getMovieInfo!!!!!!!!!!!!!!!");
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   const response = await fetch(`${API_URL}/${id}`)
   return response.json();
 }
