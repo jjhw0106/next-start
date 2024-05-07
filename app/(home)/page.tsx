@@ -3,6 +3,7 @@ import styles from "../../styles/home.module.css";
 import { API_URL } from "../constants";
 import Pagination from "../features/pagination";
 import PageList from "../components/page-list";
+import React from "react";
 
 export const metadata = {
   title: "Home",
@@ -40,8 +41,9 @@ export default async function HomePage() {
 
   return (
     <div>
-      <PageList movies={movies}></PageList>
-      {/* <Pagination items={movies} perPage={perPage} currentPage={currentPage}></Pagination> */}
+      <PageList items={movies}>
+        {/* <Pagination items={movies} perPage={perPage} currentPage={currentPage} onClick={undefined}></Pagination> */}
+      </PageList>
     </div>
   )
 }
