@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from '../../styles/home.module.css';
 import Movie from './movie';
-import PageList from './pagination';
+import Pagination from './pagination';
 interface Movie {
   id: string
   title: string
@@ -20,7 +20,7 @@ export default function MovieList({ perPage, items }: MovieListProps) {
   const [showItems, setShowItems] = useState(movies.slice(0,perPage));
 
   return(
-    <PageList items={items} perPage={perPage} setShowItems={setShowItems}>
+    <Pagination items={items} perPage={perPage} setShowItems={setShowItems}>
       <div>
         <div className={styles.container}>
         { 
@@ -28,6 +28,6 @@ export default function MovieList({ perPage, items }: MovieListProps) {
         }
         </div>
       </div>
-    </PageList>  
+    </Pagination>  
   )
 }
